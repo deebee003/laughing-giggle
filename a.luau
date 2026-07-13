@@ -28,8 +28,10 @@ else
     end
 
     print("[Base Guard] Rejoining...")
-    pcall(function() TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer) end)
-    pcall(function() TeleportService:Teleport(game.PlaceId) end)
+    local ok = pcall(function() TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer) end)
+    if not ok then
+        pcall(function() TeleportService:Teleport(game.PlaceId) end)
+    end
     return
 end
 
